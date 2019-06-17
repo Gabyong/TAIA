@@ -3,9 +3,11 @@
 <head>
   <meta charset = "utf-8">
   <title>TAIA Info</title>
-  <link rel = "shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel = "icon" href="titleLogo.png" type="image/x-icon">
   <link href="style.css" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
+
 <style>
 input:invalid+span:after {
   position: absolute; 
@@ -22,15 +24,23 @@ input:valid+span:after {
 </style>
 
 <body>
-<div class="animate">
+
 <div class="logo"> 
-<a href="http://taia.us" target="_blank"><img src="logo.png" width=300 height=150></a>
+<a href="http://taia.us" target="_blank"><img src="logo.png" width=400 height=150></a>
 </div>
-<div class="design">
+
 <center>
+<button id="myBtn" class="btn"> Click Here to Sign up!</button>
+
+<div class="modal">
+    <a href="javascript:;" class="btn_close">오늘하루열지않음</a>
+
+<div id="mypopUp" class="popUp">
+    <div class="design">
+
 <form>
-  <div id="wrap">
-  <h1 class="taia" >Trusted American Insurance Agency</h1>
+  <h1 class="taia">
+    <span class="close">&times;</span>Trusted American Insurance Agency</h1>
    <div class="form">
      <div class="form2">
       First Name  <br>
@@ -51,17 +61,21 @@ input:valid+span:after {
        <span class="validity"></span>
       <div class="form3">
     <button type="submit" onclick="Submitted()">Submit</button> 
-    </div>
-    </div>
-   </div>
   </div>
+</div>
+</div>
  </form>
+</div>
  <button class="btn" onclick="preView()">Preview</button>
 <p id="pform"></p>
+</div>
+</div>
 </center>
-</div>
-</div>
-</div>
+
+
+
+
+
 
 <script>
     function preView() {
@@ -91,6 +105,24 @@ input:valid+span:after {
               else
                 x.style.display = "none";
   }
+var popUp = document.getElementById("mypopUp");
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  popUp.style.display = "block";
+}
+
+span.onclick = function() {
+  popUp.style.display = "none";
+}
+$(document).ready(function () {
+    $(".modal .btn_close").click(function () {
+        setCookieMobile( "todayCookie", "done" , 1);
+        $(".modal").hide();
+    });
+});
+
 </script>
 
 </body>
