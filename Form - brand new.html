@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset = "utf-8">
+  <title>TAIA Info</title>
+  <link rel = "icon" href="titleLogo.png" type="image/x-icon">
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<style>
+input:invalid+span:after {
+  position: absolute; 
+  content: '✖';
+  padding-left: 5px;
+  color: #8b0000;
+}
+input:valid+span:after {
+  position: absolute;
+  content: '✓';
+  padding-left: 5px;
+  color: #009000;
+}
+</style>
+
+<body>
+<div class="animate">
+<div class="logo"> 
+<a href="http://taia.us" target="_blank"><img src="logo.png" width=300 height=150></a>
+</div>
+<div class="design">
+<center>
+<form>
+  <div id="wrap">
+  <h1 class="taia" >Trusted American Insurance Agency</h1>
+   <div class="form">
+     <div class="form2">
+      First Name  <br>
+       <input type="text" id="fname" placeholder="Enter the First Name" required
+              pattern ="[a-zA-Z]{1,}">
+        <span calss="validity"></span> <br>
+      Last Name  <br>
+       <input type="text" id="lname" placeholder="Enter the Last Name" required
+              pattern ="[a-zA-Z]{1,}">
+        <span calss="validity"></span>  <br>
+      Email  <br>
+       <input type="email" id="email" placeholder="Format : example@taia.us" required
+              pattern ="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}">
+       <span calss="validity"></span>  <br>
+      Phone Number  <br>
+       <input type="tel" name="phone" id="phone" placeholder="Format: 123-456-7890" required
+              pattern ="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+       <span class="validity"></span>
+      <div class="form3">
+    <button type="submit" onclick="Submitted()">Submit</button> 
+    </div>
+    </div>
+   </div>
+  </div>
+ </form>
+ <button class="btn" onclick="preView()">Preview</button>
+<p id="pform"></p>
+</center>
+</div>
+</div>
+</div>
+
+<script>
+    function preView() {
+            var x = document.getElementById("pform");
+            var firstName = document.getElementsByTagName('input')[0].value
+            var firstName_an = '';
+            firstName_an += '<li> First Name : ' + firstName + '</li>';
+            var lastName = document.getElementsByTagName('input')[1].value
+            var lastName_an = '';
+            lastName_an += '<li> Last Name : ' + lastName + '</li>';
+            var eMail = document.getElementsByTagName('input')[2].value
+            var eMail_an = '';
+            eMail_an += '<li> Email Address : ' + eMail +'</li>';
+            var phone = document.getElementsByTagName('input')[3].value
+            var phone_an = '';
+            phone_an += '<li> Phone Number : ' + phone +'</li>';            
+            document.getElementsByTagName('p')[0].innerHTML =
+                '<ul style="list-style-type:none;">' +
+                '<li style="font-weight:bold; font-size:1.3em;"> Submitted Info </li>' +
+                firstName_an + 
+                lastName_an + 
+                eMail_an +
+                phone_an + 
+                '</ul>';
+              if(x.style.display==="none")
+                x.style.display = "block"; 
+              else
+                x.style.display = "none";
+  }
+</script>
+
+</body>
+</html>

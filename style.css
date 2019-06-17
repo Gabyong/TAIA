@@ -1,0 +1,162 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Merriweather|Roboto&display=swap rel="stylesheet");
+
+body {
+  font: 13px/20px "Roboto", Tahoma, Verdana, sans-serif;
+  color: #a7a599;
+  background: #31302b;
+}
+.logo {
+ top:20px;
+ left:250px;
+ position : absolute;
+}
+.taia {
+ font-size: 30px;
+ color: #33406D;
+ font-style:italic;
+}
+.form2 {
+ font-size: 1.1em;
+ width: 320px;
+ height: 300px;
+ text-align:left;
+ margin-top : 20px;
+ margin-left : 20px;
+ position:relative;
+}
+#wrap {
+ margin-top:200px;
+      }
+.animate {
+ animation-duration: 3s;
+ animation-name: slidein;
+}
+@keyframes slidein{
+  from{
+    margin-top:100%;
+    height: 200%;
+  }
+  to{
+    margin-top:0%;
+    height:100%;
+  }
+}
+#pform{
+ margin-right:50px;
+}
+.btn{
+ margin-top: 50px;
+ margin-right : 15px;
+  width: 280px
+  height: 50px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0;
+  color: black;
+  background-color: white;
+  text-shadow: none;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+button:hover, button:focus{
+  color: #fff;
+  -webkit-box-shadow: inset 0px 46px 0px 0px rgba(204,86,15,1);
+  -moz-box-shadow:    inset 0px 46px 0px 0px rgba(204,86,15,1);
+  box-shadow:         inset 0px 46px 0px 0px rgba(204,86,15,1);
+  -webkit-animation: shadowFade 0.4s;
+  -moz-animation: shadowFade 0.4s;
+}
+input + span {
+  padding-right: 30px;
+}
+.form {
+    width: 100%;
+}
+.design {
+  position: relative;
+  margin: 0 auto;
+  width: 500px;
+  height: 400px;
+  background: white;
+  border-radius: 3px;
+}
+.design:before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+  z-index: -1;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+.design h1 {
+  line-height: 55px;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  background: #f2672e;
+}
+
+/* === Input Form === */
+::-webkit-input-placeholder {
+  color: #ded9cf;
+}
+
+:-moz-placeholder {
+  color: #ded9cf !important;
+}
+
+.form input[type] {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px;
+    position: relative;
+    width: 250px;
+    height: 15px;
+    border: none;
+    font-family: 'Open Sans', sans-serif;
+    background: #f7f3eb;
+    transition: color 0.3s ease-out;
+}
+
+.form input[type] {
+    margin-bottom: 10px;
+}
+
+.form button[type=submit] {
+  margin-top: 5px;
+  width: 280px;
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Open Sans',sans-serif;
+  font-weight: bold;
+  padding: 12px 0;
+  letter-spacing: 0;
+  color: #fff;
+  background-color: #f2672e;
+  text-shadow: none;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form button[type=submit]:hover, button[type=submit]:focus{
+  color: #fff;
+  -webkit-box-shadow: inset 0px 46px 0px 0px rgba(204,86,15,1);
+  -moz-box-shadow:    inset 0px 46px 0px 0px rgba(204,86,15,1);
+  box-shadow:         inset 0px 46px 0px 0px rgba(204,86,15,1);
+  -webkit-animation: shadowFade 0.4s;
+  -moz-animation: shadowFade 0.4s;
+}
+
+
