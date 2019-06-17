@@ -3,17 +3,21 @@
 
 body {
   font: 13px/20px "Roboto", Tahoma, Verdana, sans-serif;
-  color: #a7a599;
-  background: #31302b;
+  background-image: url("family.jpg");
+  height: 600px;
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-attachment: fixed;
 }
+
 .logo {
  top:20px;
- left:250px;
+ left:20px;
  position : absolute;
 }
 .taia {
  font-size: 30px;
- color: #33406D;
  font-style:italic;
 }
 .form2 {
@@ -25,28 +29,14 @@ body {
  margin-left : 20px;
  position:relative;
 }
-#wrap {
- margin-top:200px;
-      }
-.animate {
- animation-duration: 3s;
- animation-name: slidein;
-}
-@keyframes slidein{
-  from{
-    margin-top:100%;
-    height: 200%;
-  }
-  to{
-    margin-top:0%;
-    height:100%;
-  }
-}
+
 #pform{
  margin-right:50px;
+ color:#bcbcbc;
 }
+
 .btn{
- margin-top: 50px;
+ margin-top: 25px;
  margin-right : 15px;
   width: 280px
   height: 50px;
@@ -55,18 +45,30 @@ body {
   font-weight: bold;
   letter-spacing: 0;
   color: black;
-  background-color: white;
+  background: #bcbcbc;
   text-shadow: none;
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  position: relative;
 }
+
+#myBtn{
+  background: #f2672e;
+  position: absolute;
+  left:12%;
+  top:20%;
+  height:50px;
+  border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+border: 0px solid #000000;
+}
+
 button:hover, button:focus{
   color: #fff;
-  -webkit-box-shadow: inset 0px 46px 0px 0px rgba(204,86,15,1);
-  -moz-box-shadow:    inset 0px 46px 0px 0px rgba(204,86,15,1);
-  box-shadow:         inset 0px 46px 0px 0px rgba(204,86,15,1);
+  -webkit-box-shadow: inset 0px 50px 0px 0px rgba(204,86,15,1);
+  -moz-box-shadow:    inset 0px 50px 0px 0px rgba(204,86,15,1);
+  box-shadow:         inset 0px 50px 0px 0px rgba(204,86,15,1);
   -webkit-animation: shadowFade 0.4s;
   -moz-animation: shadowFade 0.4s;
 }
@@ -155,8 +157,44 @@ input + span {
   -webkit-box-shadow: inset 0px 46px 0px 0px rgba(204,86,15,1);
   -moz-box-shadow:    inset 0px 46px 0px 0px rgba(204,86,15,1);
   box-shadow:         inset 0px 46px 0px 0px rgba(204,86,15,1);
-  -webkit-animation: shadowFade 0.4s;
-  -moz-animation: shadowFade 0.4s;
+  -webkit-animation: shadowFade 1s;
+  -moz-animation: shadowFade 1s;
+}
+
+/* Close Pop-up */
+.popUp {
+  margin-top : 180px;
+  display: block; 
+  overflow: auto;
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+.close {
+  color: white;
+  float: right;
+  margin-right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 
+/* Add Animation */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
