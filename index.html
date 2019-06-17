@@ -116,13 +116,37 @@ btn.onclick = function() {
 span.onclick = function() {
   popUp.style.display = "none";
 }
+$( document ).ready(function() {
+  cookiedata = document.cookie; 
+  if ( cookiedata.indexOf("ncookie=done") < 0 ){ 
+    document.getElementById('popup').style.display = "block";    //  팝업창 아이디
+  } else {
+    document.getElementById('popup').style.display = "none";    // 팝업창 아이디
+  }
+});
+
 $(document).ready(function () {
     $(".modal .btn_close").click(function () {
         setCookieMobile( "todayCookie", "done" , 1);
         $(".modal").hide();
     });
 });
-
+ 
+function setCookieMobile ( name, value, expiredays ) {
+    var todayDate = new Date();
+    todayDate.setDate( todayDate.getDate() + expiredays );
+    document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+}
+function getCookieMobile () {
+    var cookiedata = document.cookie;
+    if ( cookiedata.indexOf("todayCookier=done") < 0 ){
+         $(".modal").show();
+    }
+    else {
+        $(".modal").hide();
+    }
+}
+getCookieMobile();
 </script>
 
 </body>
