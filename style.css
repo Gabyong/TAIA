@@ -46,8 +46,8 @@ input:valid+span:after {
 }
 #preview{
   position: relative;
-  left:26%;
 }
+
 #pform{
  margin-right:60px;
  color:#bcbcbc;
@@ -215,6 +215,10 @@ input + span {
   color: #000;
   text-decoration: none;
   cursor: pointer;
+}
+
+#mypopUp{
+  display: none;
 }
 
 
