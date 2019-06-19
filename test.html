@@ -253,7 +253,7 @@ input + span {
     <div class="design">
 <form>
   <h1 class="taia">
-  <span class="close">&times;</span>Trusted American Insurance Agency</h1>
+  <span class="close" id="close">&times;</span>Trusted American Insurance Agency</h1>
    <div class="form">
      <div class="form2">
       First Name  <br>
@@ -318,7 +318,7 @@ input + span {
   // for popup
     var popUp = document.getElementById("mypopUp");
     var btn = document.getElementById("myBtn");
-    var span = document.getElementsByClassName("close")[0];
+    var span = document.getElementById("close");
 
     btn.onclick = function() {
       popUp.style.display = "block";
