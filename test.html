@@ -1,64 +1,56 @@
 <html> 
-<script type="text/javascript"> 
-<!-- 
-//출처 : http://www.w3schools.com/js/js_cookies.asp 
-function setCookie(c_name,value,exdays) 
-{ 
-    var exdate=new Date(); 
-    exdate.setDate(exdate.getDate() + exdays); 
-    var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString()); 
-    document.cookie=c_name + "=" + c_value; 
-} 
-function getCookie(c_name) 
-{ 
-    var c_value = document.cookie; 
-    var c_start = c_value.indexOf(" " + c_name + "="); 
-    if (c_start == -1) 
+<body> 
+    <div id="boxAndlabel">
+    <div class="close" id="closepop" onclick="closeForday()">&times;</div>Don't ask again
+    </div>
+    <script>
+            function setCookie(c_name,value,exdays) 
     { 
-          c_start = c_value.indexOf(c_name + "="); 
-   } 
-   if (c_start == -1) 
-   { 
-         c_value = null; 
-  } 
-  else 
-  { 
+        var exdate=new Date(); 
+        exdate.setDate(exdate.getDate() + exdays); 
+        var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString()); 
+        document.cookie=c_name + "=" + c_value; 
+    } 
+
+    function getCookie(c_name) 
+    { 
+        var c_value = document.cookie; 
+        var c_start = c_value.indexOf(" " + c_name + "="); 
+        if (c_start == -1) 
+        { 
+            c_start = c_value.indexOf(c_name + "="); 
+        } 
+        if (c_start == -1) 
+        { 
+             c_value = null; 
+        } 
+        else 
+        { 
         c_start = c_value.indexOf("=", c_start) + 1; 
         var c_end = c_value.indexOf(";", c_start); 
         if (c_end == -1) 
         { 
               c_end = c_value.length; 
-       } 
-       c_value = unescape(c_value.substring(c_start,c_end)); 
-  } 
-  return c_value; 
-} 
-function 일년간안보기(){ 
-    setCookie("myCookie","팝업안보기",365); 
-    document.getElementById('popup').style.display='none'; 
-} 
-function 쿠키삭제(){ 
-  setCookie("myCookie","",0); 
-} 
-window.onload = function(){ 
-    var myCookie = getCookie("myCookie")||""; 
-    if( myCookie == "" ) document.getElementById('popup').style.display='block'; 
-} 
-//--> 
-</script> 
-<style type="text/css"> 
-  div#popup { 
-        display:none; 
-  } 
-</style> 
-<body> 
-<input type="button" value="쿠키삭제" onclick="쿠키삭제()"> 
-<div id='popup'> 
-주저리 주저리 주저리<Br> 
-주저리 주저리 주저리<Br> 
-주저리 주저리 주저리<Br> 
-주저리 주저리 주저리<Br> 
-주저리 주저리 주저리<Br> 
-<input type="checkbox" onClick="일년간안보기()">1년간 안보기 
-</div> 
-</body> 
+        } 
+        c_value = unescape(c_value.substring(c_start,c_end)); 
+        } 
+        return c_value;
+    }
+      window.onload = function (){
+      var myCookie = getCookie("myCookie")||"";
+      if(myCookie=="") document.getElementById('mypopUp').style.display='block';
+    }
+  
+    function closeForday(){
+      setCookie("myCookie","closeForm",1);
+      document.getElementById('mypopUp').style.display='none';
+    }
+
+    window.onload = function (){
+      var myCookie = getCookie("myCookie")||"";
+      if(myCookie=="") document.getElementById('mypopUp').style.display='block';
+    }
+  
+    </script>
+</body>
+    </html>
