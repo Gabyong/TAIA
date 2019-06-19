@@ -396,11 +396,11 @@ input + span {
         } 
         return c_value;
     }
+ 
       window.onload = function (){
       var myCookie = getCookie("myCookie")||"";
-      if(myCookie=="") document.getElementById('mypopUp').style.display='none';
+      if(myCookie=="") document.getElementById('mypopUp').style.display='block';
     }
-  
     function closeForday(){
       setCookie("myCookie","closeForm",1);
       document.getElementById('mypopUp').style.display='none';
