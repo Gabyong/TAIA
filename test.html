@@ -398,17 +398,12 @@ input + span {
     }
       window.onload = function (){
       var myCookie = getCookie("myCookie")||"";
-      if(myCookie=="") document.getElementById('mypopUp').style.display='block';
+      if(myCookie=="") document.getElementById('mypopUp').style.display='none';
     }
   
     function closeForday(){
       setCookie("myCookie","closeForm",1);
       document.getElementById('mypopUp').style.display='none';
-    }
-
-    window.onload = function (){
-      var myCookie = getCookie("myCookie")||"";
-      if(myCookie=="") document.getElementById('mypopUp').style.display='block';
     }
   
     </script>
