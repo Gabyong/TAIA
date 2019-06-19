@@ -1,56 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <script>
-    function GetCookie(name){//name = "username"
-        var pairs = document.cookie.split(";");
-        //쿠키문자열을 ;을 경계로 분할
-        //[username = 이름][expires = 2019.10.15]
-        for(var i = 0;i<pairs.length;i++){
-            var pair = pairs[i].trim();
-            //앞뒤 공백 제거(trim)
-            var unit = pair.split("=");
-            //[username]"="을 기준으로 분할[이름]
-            if(unit[0]==name)
-                return unescape(unit[1]);
-                    //unit=[이름]
-                    //카운드도 똑같은 방식으로 반환
-                    //아스키코드를 다시 우리가 보는 방식으로 바꾸는게 unescape
-        }
-        return null;
-    }
-        function SetCookie( name, value, expireDate){
-            //name="username' value=이름, expireDate=1년후
-            var cookieStr = name + "=" + escape(value)+
-                ((expireDate ==null)?"":("; expires="+expireDate.toGMTString()));
-            //username =이름; expires = 2019.10.15
-            //7번행으로 이동
-            document.cookie = cookieStr;
-        }
-    </script>
-</head>
-<body>
-    <script>
-    var username = GetCookie("username");
-    var count = GetCookie("count");
-    var expire = new Date();//현재시간
-        if(username == null){
-            count = 0;
-            username = prompt("이름을 입력해주십시오","");
-            if(username==null){
-                alert("이름을 입력하시면 보다 나은 서비스를 받음");
-                username="아무개"
-            }else{
-                expire.setTime(expire.getTime()+(365*24*3600*1000));//1년후
-                SetCookie("ID",username,expire);
-            }
-        }
-        count++;
-        expire.setTime(expire.getTime()+(365*24*3600*1000)); //1년후
-        SetCookie("count",count,expire);
-        document.write("<p>어서오십시오 "+username+"님의 "+count+"번째 방문을 환영합니다.!");
-    </script>
-</body>
-</html>
+<html> 
+<script type="text/javascript"> 
+<!-- 
+//출처 : http://www.w3schools.com/js/js_cookies.asp 
+function setCookie(c_name,value,exdays) 
+{ 
+    var exdate=new Date(); 
+    exdate.setDate(exdate.getDate() + exdays); 
+    var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString()); 
+    document.cookie=c_name + "=" + c_value; 
+} 
+function getCookie(c_name) 
+{ 
+    var c_value = document.cookie; 
+    var c_start = c_value.indexOf(" " + c_name + "="); 
+    if (c_start == -1) 
+    { 
+          c_start = c_value.indexOf(c_name + "="); 
+   } 
+   if (c_start == -1) 
+   { 
+         c_value = null; 
+  } 
+  else 
+  { 
+        c_start = c_value.indexOf("=", c_start) + 1; 
+        var c_end = c_value.indexOf(";", c_start); 
+        if (c_end == -1) 
+        { 
+              c_end = c_value.length; 
+       } 
+       c_value = unescape(c_value.substring(c_start,c_end)); 
+  } 
+  return c_value; 
+} 
+function 일년간안보기(){ 
+    setCookie("myCookie","팝업안보기",365); 
+    document.getElementById('popup').style.display='none'; 
+} 
+function 쿠키삭제(){ 
+  setCookie("myCookie","",0); 
+} 
+window.onload = function(){ 
+    var myCookie = getCookie("myCookie")||""; 
+    if( myCookie == "" ) document.getElementById('popup').style.display='block'; 
+} 
+//--> 
+</script> 
+<style type="text/css"> 
+  div#popup { 
+        display:none; 
+  } 
+</style> 
+<body> 
+<input type="button" value="쿠키삭제" onclick="쿠키삭제()"> 
+<div id='popup'> 
+주저리 주저리 주저리<Br> 
+주저리 주저리 주저리<Br> 
+주저리 주저리 주저리<Br> 
+주저리 주저리 주저리<Br> 
+주저리 주저리 주저리<Br> 
+<input type="checkbox" onClick="일년간안보기()">1년간 안보기 
+</div> 
+</body> 
