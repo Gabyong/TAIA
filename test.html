@@ -8,6 +8,11 @@
    
     <style>
 
+#mypopUp{
+  display: none;
+}
+      
+      
 body {
   font: 13px/20px "Roboto", Tahoma, Verdana, sans-serif;
   background-image: url("family.jpg");
@@ -397,14 +402,15 @@ input + span {
         return c_value;
     }
  
-      window.onload = function (){
-      var myCookie = getCookie("myCookie")||"";
-      if(myCookie=="") document.getElementById('mypopUp').style.display='block';
-    }
-    function closeForday(){
+         function closeForday(){
       setCookie("myCookie","closeForm",1);
       document.getElementById('mypopUp').style.display='none';
     }
+
+    window.onload = function (){
+      var myCookie = getCookie("myCookie")||"";
+      if(myCookie=="") document.getElementById('mypopUp').style.display='block';
+      }
   
     </script>
     
