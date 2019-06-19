@@ -11,16 +11,31 @@ body {
   background-attachment: fixed;
 }
 
+input:invalid+span:after {
+  position: absolute; 
+  content: '✖';
+  padding-left: 5px;
+  color: #8b0000;
+}
+input:valid+span:after {
+  position: absolute;
+  content: '✓';
+  padding-left: 5px;
+  color: #009000;
+}
+
 .logo {
  top:20px;
  left:20px;
  position : absolute;
 }
+
 .taia {
  font-size: 30px;
  font-style:italic;
 }
 .form2 {
+ font-family: 'Roboto', sans-serif;
  font-size: 1.1em;
  width: 320px;
  height: 300px;
@@ -29,9 +44,12 @@ body {
  margin-left : 20px;
  position:relative;
 }
-
+#preview{
+  position: relative;
+  left:26%;
+}
 #pform{
- margin-right:50px;
+ margin-right:60px;
  color:#bcbcbc;
 }
 
@@ -64,6 +82,18 @@ body {
 border: 0px solid #000000;
 }
 
+#boxAndlabel{
+  width:130px;
+  position:relative;
+  left:270px;
+  bottom: 10px;
+  font-style:italic;
+  }
+
+#closepop{
+  color: black;
+}
+
 button:hover, button:focus{
   color: #fff;
   -webkit-box-shadow: inset 0px 50px 0px 0px rgba(204,86,15,1);
@@ -82,8 +112,8 @@ input + span {
   position: relative;
   margin: 0 auto;
   width: 500px;
-  height: 400px;
-  background: white;
+  height: 420px;
+  background: #ffe6d3;
   border-radius: 3px;
 }
 .design:before {
@@ -117,7 +147,7 @@ input + span {
 }
 
 .form input[type] {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     padding: 10px;
     position: relative;
@@ -135,7 +165,7 @@ input + span {
 
 .form button[type=submit] {
   margin-top: 5px;
-  width: 280px;
+  width: 270px;
   text-align: center;
   font-size: 14px;
   font-family: 'Open Sans',sans-serif;
