@@ -30,7 +30,7 @@
   // for popup
     var popUp = document.getElementById("mypopUp");
     var btn = document.getElementById("myBtn");
-    var span = document.getElementsByClassName("close")[0];
+    var span = document.getElementById("close");
 
     btn.onclick = function() {
       popUp.style.display = "block";
@@ -116,5 +116,5 @@
     window.onload = function (){
       var myCookie = getCookie("myCookie")||"";
       if(myCookie=="") document.getElementById('mypopUp').style.display='block';
-    }
+      }
   
