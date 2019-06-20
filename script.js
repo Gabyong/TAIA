@@ -71,9 +71,6 @@
       }
 
     //localstorage delete
-    function Submitted() {
-      localStorage.clear();
-    }
 
     //Cookie
     function setCookie(c_name,value,exdays) 
