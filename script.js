@@ -118,3 +118,30 @@
       if(myCookie=="") document.getElementById('mypopUp').style.display='block';
       }
   
+//Ajax
+    $(function() {
+    $(".submit").click(function() {
+    var fname = $("#fname").val();
+    var lname = $("#lname").val();
+    var email = $("#email").val();
+    var phone = $("#phone").val();
+    var dataString = 'frist Name='+ fname + '&last Name=' + lname + '&Email Address=' + email + '&Phone Number' + phone;
+
+    if(fname=='' || lname=='' || email=='' || phone=='')
+    {
+      $('.success').fadeOut(200).hide();
+      $('.error').fadeOut(200).show();
+    }
+    else
+    {
+      $.ajax({
+        type:"POST", url:"http://stage.gototaia.com/Gabyong/ping.php", data: dataString,
+        success: function(){
+          $('.success').fadeIn(200).show();
+          $('.error').fadeOut(200).hide();
+        }
+      });
+    }
+    return false;
+    });
+    });  
