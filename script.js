@@ -124,7 +124,7 @@
     var lname = $("#lname").val();
     var email = $("#email").val();
     var phone = $("#phone").val();
-    var dataString = 'frist Name='+ fname + '&last Name=' + lname + '&Email Address=' + email + '&Phone Number' + phone;
+    var dataString = {fname:fname, lname:lname, email:email, phone:phone};
 
 if($("#fname")[0].checkValidity() && $("#lname")[0].checkValidity() && 
       $("#email")[0].checkValidity() && $("#phone")[0].checkValidity())
