@@ -130,7 +130,7 @@ if($("#fname")[0].checkValidity() && $("#lname")[0].checkValidity() &&
       $("#email")[0].checkValidity() && $("#phone")[0].checkValidity())
     {
       $.ajax({
-        type:"POST", url:"http://stage.gototaia.com/Gabyong/ping.php", data: dataString,
+        type:"POST", url:"https://stage.gototaia.com/Gabyong/ping.php", data: dataString,
         success: function(){
           alert("success");
                            }
