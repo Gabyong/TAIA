@@ -131,8 +131,8 @@ if($("#fname")[0].checkValidity() && $("#lname")[0].checkValidity() &&
     {
       $.ajax({
         type:"POST", url:"https://stage.gototaia.com/Gabyong/ping.php", data: dataString,
-        success: function(){
-          alert("success");
+        success: function(data){
+          alert(data);
                            }
           }); 
     }
