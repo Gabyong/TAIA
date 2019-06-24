@@ -16,6 +16,7 @@ input:invalid+span:after {
   padding-left: 5px;
   color: #8b0000;
 }
+
 input:valid+span:after {
   position: absolute;
   content: '✓';
@@ -52,6 +53,14 @@ input:valid+span:after {
  color:#bcbcbc;
 }
 
+#check{
+  position: absolute;
+  display:none;
+  width:130px;
+  right:185px;
+  top:310px;
+}
+
 .btn{
  margin-top: 25px;
  margin-right : 15px;
@@ -81,6 +90,10 @@ input:valid+span:after {
 border: 0px solid #000000;
 }
 
+#submit{
+  background: #129740;
+}
+
 #boxAndlabel{
   width:130px;
   position:relative;
@@ -97,7 +110,7 @@ button:hover, button:focus{
   color: #fff;
   -webkit-box-shadow: inset 0px 50px 0px 0px rgba(204,86,15,1);
   -moz-box-shadow:    inset 0px 50px 0px 0px rgba(204,86,15,1);
-  box-shadow:         inset 0px 50px 0px 0px rgba(204,86,15,1);
+  -box-shadow:         inset 0px 50px 0px 0px rgba(204,86,15,1);
   -webkit-animation: shadowFade 0.4s;
   -moz-animation: shadowFade 0.4s;
 }
@@ -162,9 +175,9 @@ input + span {
     margin-bottom: 10px;
 }
 
-.form button[type=submit] {
+ .buttonAlert, .form button[type=button] {
   margin-top: 5px;
-  width: 270px;
+  width: 130px;
   text-align: center;
   font-size: 14px;
   font-family: 'Roboto',sans-serif;
@@ -181,11 +194,20 @@ input + span {
   margin-bottom: 20px;
 }
 
-.form button[type=submit]:hover, button[type=submit]:focus{
+.form button[type]:hover, button[type]:focus{
   color: #fff;
   -webkit-box-shadow: inset 0px 46px 0px 0px rgba(204,86,15,1);
   -moz-box-shadow:    inset 0px 46px 0px 0px rgba(204,86,15,1);
   box-shadow:         inset 0px 46px 0px 0px rgba(204,86,15,1);
+  -webkit-animation: shadowFade 1s;
+  -moz-animation: shadowFade 1s;
+}
+
+.form button[type=button]:hover, button[type=button]:focus{
+    color: #fff;
+  -webkit-box-shadow: inset 0px 46px 0px 0px rgba(20,122,54,1);
+  -moz-box-shadow:    inset 0px 46px 0px 0px rgba(20,122,54,1);
+  box-shadow:         inset 0px 46px 0px 0px rgba(20,122,54,1);
   -webkit-animation: shadowFade 1s;
   -moz-animation: shadowFade 1s;
 }

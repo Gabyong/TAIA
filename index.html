@@ -5,7 +5,7 @@
   <title>TAIA Info</title>
   <link rel = "icon" href="titleLogo.png" type="image/x-icon">
   <link href="style.css" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.0/jquery.min.js"> </script>
   <script src="script.js"defer></script>
 </head>
 
@@ -41,10 +41,9 @@
        <input type="tel" name="phone" id="phone" placeholder="Format: 123-456-7890" required
               pattern ="[0-9]{3}-[0-9]{3}-[0-9]{4}">
        <span class="validity"></span>
-    <button type="button" id="submit">Submit</button> <br>
-
-<span class="error" style="display:none"> Please Enter Valid Data</span>
-<span class="success" style="display:none"> Registration Successfully</span>
+    <button class="buttonAlert" onclick="return checkAlert()">Check</button>   
+    <button type="button" id="submit" >Submit</button> <br>
+    <div id="check"><span></span></div>
 
     <div id="boxAndlabel">
     <div class="close" id="closepop" onclick="closeForday()">&times;</div>Don't ask again
