@@ -35,6 +35,8 @@
           document.getElementById('check').style.display='block';
           return false;
         }
+        else
+          document.getElementById('check').style.display='none';
       }
 
 
@@ -141,16 +143,15 @@ if($("#fname")[0].checkValidity() && $("#lname")[0].checkValidity() &&
       $("#email")[0].checkValidity() && $("#phone")[0].checkValidity())
     {
       $.ajax({
-        type:"POST", url:"http://127.0.0.1/ping.php", data: dataString,
+        type:"POST", url:"ping.php", data: dataString,
         success: function(data){
           alert(data);
+          location.href="https://taia.us";
           }
           }); 
       localStorage.clear();
+      document.getElementById("mypopUp").style.display = "none";
     }
+
     });
     });  
-
-function sub(){
-  return false;
-}
