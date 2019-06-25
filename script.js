@@ -143,7 +143,7 @@ if($("#fname")[0].checkValidity() && $("#lname")[0].checkValidity() &&
       $("#email")[0].checkValidity() && $("#phone")[0].checkValidity())
     {
       $.ajax({
-        type:"POST", url:"ping.php", data: dataString,
+        type:"POST", url:"/ping.php", data: dataString,
         success: function(data){
           alert(data);
           location.href="https://taia.us";
