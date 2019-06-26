@@ -1,133 +1,30 @@
-@import url(https://fonts.googleapis.com/css?family=Merriweather|Roboto&display=swap rel="stylesheet");
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet);
 
 body {
-  font: 13px/20px "Roboto", Tahoma, Verdana, sans-serif;
-  background-image: url("family.jpg");
-  height: 600px;
-  background-position: center;
-  background-repeat: no-repeat; 
-  background-size: cover;
-  background-attachment: fixed;
+	font: 13px/20px "Roboto", Tahoma, Verdana, sans-serif;
+	background-image: url("family.jpg");
+  	background-position: center;
+  	background-repeat: no-repeat; 
+  	background-size: cover;
+  	background-attachment: fixed;
 }
 
-input:invalid+span:after {
-  position: absolute; 
-  content: '✖';
-  padding-left: 5px;
-  color: #8b0000;
+.hc { width:100%; left:0; right:0; margin-left:auto; margin-right:auto; } /* Horizontal Center Align */ 
+
+.wrap {
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.5s;
 }
 
-input:valid+span:after {
-  position: absolute;
-  content: '✓';
-  padding-left: 5px;
-  color: #009000;
-}
-
-.logo {
- top:20px;
- left:20px;
- position : absolute;
-}
-
-.taia {
- font-size: 30px;
- font-style:italic;
-}
-.form2 {
- font-family: 'Roboto', sans-serif;
- font-size: 1.1em;
- width: 320px;
- height: 300px;
- text-align:left;
- margin-top : 20px;
- margin-left : 30px;
- position:relative;
-}
-#preview{
-  position: relative;
-}
-
-#pform{
- margin-right:50px;
- color:#bcbcbc;
-}
-
-#check{
-  position: absolute;
-  display:none;
-  width:135px;
-  right:185px;
-  top:310px;
-}
-
-.btn{
- margin-top: 25px;
- margin-right : 15px;
-  width: 280px
-  height: 50px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 0;
-  color: black;
-  background: #bcbcbc;
-  text-shadow: none;
-  text-transform: uppercase;
-  border: none;
-  cursor: pointer;
-}
-
-#myBtn{
-  background: #f2672e;
-  position: absolute;
-  left:12%;
-  top:20%;
-  height:50px;
-  border-radius: 10px 10px 10px 10px;
--moz-border-radius: 10px 10px 10px 10px;
--webkit-border-radius: 10px 10px 10px 10px;
-border: 0px solid #000000;
-}
-
-#submit{
-  background: #129740;
-}
-
-#boxAndlabel{
-  width:130px;
-  position:relative;
-  left:270px;
-  bottom: 10px;
-  font-style:italic;
-  }
-
-#closepop{
-  color: black;
-}
-
-button:hover, button:focus{
-  color: #fff;
-  -webkit-box-shadow: inset 0px 50px 0px 0px rgba(204,86,15,1);
-  -moz-box-shadow:    inset 0px 50px 0px 0px rgba(204,86,15,1);
-  -box-shadow:         inset 0px 50px 0px 0px rgba(204,86,15,1);
-  -webkit-animation: shadowFade 0.4s;
-  -moz-animation: shadowFade 0.4s;
-}
-input + span {
-  padding-right: 30px;
-}
-.form {
-    width: 100%;
-}
 .design {
   position: relative;
   margin: 0px auto;
   width: 500px;
-  height: 420px;
+  height: 400px;
   background: #ffe6d3;
   border-radius: 3px;
 }
+
 .design:before {
   content: '';
   position: absolute;
@@ -139,50 +36,49 @@ input + span {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 4px;
 }
+
 .design h1 {
-  line-height: 55px;
-  font-size: 15px;
+  line-height: 70px;
+  font-size: 17px;
   font-weight: bold;
   text-transform: uppercase;
-  color: #fff;
+  color: #000;
   text-align: center;
   background: #f2672e;
+  font-style: italic;
+  padding-left: 20px;
 }
 
-/* === Input Form === */
-::-webkit-input-placeholder {
-  color: #ded9cf;
+#inputImg {
+	width:25px; height:25px;
+	vertical-align: middle;
+	margin-right:5px;
 }
 
-:-moz-placeholder {
-  color: #ded9cf !important;
+.formCSS {
+ font-size: 1.2em;
+ text-align: center;
+ margin-top:40px;
 }
 
-.form input[type] {
+.formCSS input[type] {
     font-size: 14px;
-    font-weight: 400;
     padding: 10px;
-    position: relative;
-    width: 250px;
     height: 15px;
     border: none;
-    font-family: 'Roboto', sans-serif;
     background: #f7f3eb;
     transition: color 0.3s ease-out;
 }
 
-.form input[type] {
-    margin-bottom: 10px;
+.formCSS input[type=email], input[type=tel] {
+	width: 365px;
 }
 
- .buttonAlert, .form button[type=button] {
-  margin-top: 5px;
+button {
+  margin-top: 30px;
   width: 135px;
-  text-align: center;
   font-size: 14px;
-  font-family: 'Roboto',sans-serif;
   font-weight: bold;
-  padding: 12px 0;
   letter-spacing: 0;
   color: #fff;
   background-color: #f2672e;
@@ -191,65 +87,124 @@ input + span {
   border: none;
   cursor: pointer;
   position: relative;
-  margin-bottom: 20px;
 }
 
-.form button[type]:hover, button[type]:focus{
-  color: #fff;
+/* Button hover & focus */
+.buttonAlert:hover, .signBox:hover {
+   color: #fff;
   -webkit-box-shadow: inset 0px 46px 0px 0px rgba(204,86,15,1);
   -moz-box-shadow:    inset 0px 46px 0px 0px rgba(204,86,15,1);
-  box-shadow:         inset 0px 46px 0px 0px rgba(204,86,15,1);
-  -webkit-animation: shadowFade 1s;
-  -moz-animation: shadowFade 1s;
+   box-shadow:        inset 0px 46px 0px 0px rgba(204,86,15,1);
 }
 
-.form button[type=button]:hover, button[type=button]:focus{
-    color: #fff;
+.submit:hover {
+   color: #fff;
   -webkit-box-shadow: inset 0px 46px 0px 0px rgba(20,122,54,1);
   -moz-box-shadow:    inset 0px 46px 0px 0px rgba(20,122,54,1);
-  box-shadow:         inset 0px 46px 0px 0px rgba(20,122,54,1);
-  -webkit-animation: shadowFade 1s;
-  -moz-animation: shadowFade 1s;
+   box-shadow:        inset 0px 46px 0px 0px rgba(20,122,54,1);
 }
 
-/* Close Pop-up */
-.popUp {
-  margin-top : 140px;
-  display: block; 
-  overflow: auto;
-  -webkit-animation-name: fadeIn; /* Fade in the background */
-  -webkit-animation-duration: 0.4s;
-  animation-name: fadeIn;
-  animation-duration: 0.4s
+.preview:hover {
+  color: #000;
+  -webkit-box-shadow: inset 0px 46px 0px 0px rgba(160,154,154,1);
+  -moz-box-shadow:    inset 0px 46px 0px 0px rgba(160,154,154,1);
+   box-shadow:        inset 0px 46px 0px 0px rgba(160,154,154,1);
 }
 
-.close {
-  color: white;
-  float: right;
-  margin-right: 10px;
-  font-size: 20px;
+/* Button padding */
+.btnPd {
+	padding: 12px 0;
+}
+
+.submit {
+	background: #129740;
+	margin-left:10px;
+}
+
+/* preview */
+.preview {
+	  display: block;
+	  margin: 0 auto;
+	  position: relative;
+	  top: 20px;
+    background: #bcbcbc;
+    color:#000;
+ 	  width:76.58px;
+}
+
+#pform {
+    position: relative;
+    text-align: center;
+	  color:#bcbcbc;
+    top:20px;
+    margin-right:35px;
+}
+
+
+/* Validation */
+input:invalid+span:after {
+  position: relative; 
+  content: '✖';
+  color: #8b0000;
+  vertical-align: middle;
+}
+
+input:valid+span:after {
+  position: relative;
+  content: '✓';
+  color: #009000;
+  vertical-align: middle;
+}
+
+input + span {
+  margin-left: 10px;
+}
+
+#check{
+  position: absolute;
+  margin-top:15px;
+  width:100%;
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
+/* Open and Close */
+.close {
+  color: black;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  margin-right: 5px;
+}
+
+.close:hover {
+  color: #fff;
   cursor: pointer;
 }
 
-#mypopUp{
-  display: none;
+.askBox {
+  position: relative;
+  font-style: italic;
+  text-align: right;
+  font-size:15px;
+  top:50px;
 }
 
+.askBox > div {margin-left:5px;} /* spacing between askBox and X sign */
 
+.signBox {
+   width: 200px;
+   position: absolute;
+   top: 18%;
+   left:170px;
+   color: #000;
+   border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+   border: 0px solid #000000;
+}
 /* Add Animation */
 @-webkit-keyframes fadeIn {
-  from {opacity: 0} 
-  to {opacity: 1}
-}
-
-@keyframes fadeIn {
   from {opacity: 0} 
   to {opacity: 1}
 }

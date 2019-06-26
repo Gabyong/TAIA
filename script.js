@@ -1,5 +1,5 @@
-  // For previewing
-    function preView() {
+ /* Preview */
+ function preView() {
             var x = document.getElementById("pform");
             var firstName = document.getElementsByTagName('input')[0].value
             var firstName_an = '';
@@ -15,7 +15,7 @@
             phone_an += '<li> Phone Number : ' + phone +'</li>';            
             document.getElementsByTagName('p')[0].innerHTML =
                 '<ul style="list-style-type:none;">' +
-                '<li style="font-weight:bold; font-size:1.3em;"> Submitted Info </li>' +
+                '<li style="font-weight:bold; font-size:1.3em;"> Typed Info </li>' +
                 firstName_an + 
                 lastName_an + 
                 eMail_an +
@@ -25,37 +25,65 @@
                 x.style.display = "block"; 
               else
                 x.style.display = "none";
-                      }
+}
 
-      function checkAlert() {
-        if($("#fname")[0].checkValidity() && $("#lname")[0].checkValidity() && 
-      $("#email")[0].checkValidity() && $("#phone")[0].checkValidity())
-        {
-          document.getElementById('check').innerHTML = "Click Submit button!";
-          document.getElementById('check').style.display='block';
-          return false;
-        }
-        else
-          document.getElementById('check').style.display='none';
-      }
-
-
-  // for popup
-    var popUp = document.getElementById("mypopUp");
-    var btn = document.getElementById("myBtn");
-    var span = document.getElementById("close");
-
-    btn.onclick = function() {
-      popUp.style.display = "block";
+/* Open and Close */
+    var wrap = document.getElementById("formWrapper");
+    var open = document.getElementById("open");
+    var close = document.getElementById("close");
+    open.onclick = function() {
+        wrap.style.display = "block";
+    }
+    close.onclick = function() {
+        wrap.style.display = "none";
     }
 
-    span.onclick = function() {
-      popUp.style.display = "none";
+/* Cookie */
+    function setCookie(c_name,value,exdays) { 
+        var exdate=new Date(); 
+        exdate.setDate(exdate.getDate() + exdays); 
+        var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString()); 
+        document.cookie=c_name + "=" + c_value; 
+    } 
+
+    function getCookie(c_name) { 
+        var c_value = document.cookie; 
+        var c_start = c_value.indexOf(" " + c_name + "="); 
+        if (c_start == -1) 
+        { 
+            c_start = c_value.indexOf(c_name + "="); 
+        } 
+        if (c_start == -1) 
+        { 
+             c_value = null; 
+        } 
+        else 
+        { 
+        c_start = c_value.indexOf("=", c_start) + 1; 
+        var c_end = c_value.indexOf(";", c_start); 
+        if (c_end == -1) 
+        { 
+              c_end = c_value.length; 
+        } 
+        c_value = unescape(c_value.substring(c_start,c_end)); 
+        } 
+        return c_value;
     }
 
-  // for Pre-fill
-  var textValue = document.getElementsByTagName("input");
-  const submit = document.querySelector('#submit');
+    function closeAday(){
+      setCookie("myCookie","closeForm",1);
+      wrap.style.display='none';
+    }
+
+    window.onload = function (){
+      var myCookie = getCookie("myCookie")||"";
+      if(myCookie=="") wrap.style.display='block';
+    }
+
+    
+/* LocalStorage */
+var textValue = document.getElementsByTagName("input");
+const submit = document.querySelector('#submit');
   
      function saveText() {
       for(i=0;i<textValue.length;i++){
@@ -83,53 +111,21 @@
         }
       }
 
-
-
-    //Cookie
-    function setCookie(c_name,value,exdays) 
-    { 
-        var exdate=new Date(); 
-        exdate.setDate(exdate.getDate() + exdays); 
-        var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString()); 
-        document.cookie=c_name + "=" + c_value; 
-    } 
-
-    function getCookie(c_name) 
-    { 
-        var c_value = document.cookie; 
-        var c_start = c_value.indexOf(" " + c_name + "="); 
-        if (c_start == -1) 
-        { 
-            c_start = c_value.indexOf(c_name + "="); 
-        } 
-        if (c_start == -1) 
-        { 
-             c_value = null; 
-        } 
-        else 
-        { 
-        c_start = c_value.indexOf("=", c_start) + 1; 
-        var c_end = c_value.indexOf(";", c_start); 
-        if (c_end == -1) 
-        { 
-              c_end = c_value.length; 
-        } 
-        c_value = unescape(c_value.substring(c_start,c_end)); 
-        } 
-        return c_value;
-    }
-    function closeForday(){
-      setCookie("myCookie","closeForm",1);
-      document.getElementById('mypopUp').style.display='none';
-    }
-
-    window.onload = function (){
-      var myCookie = getCookie("myCookie")||"";
-      if(myCookie=="") document.getElementById('mypopUp').style.display='block';
+      /* CheckBox */
+      function checkAlert() {
+        if($("#fname")[0].checkValidity() && $("#lname")[0].checkValidity() && 
+      $("#email")[0].checkValidity() && $("#phone")[0].checkValidity())
+        {
+          document.getElementById('check').innerHTML = "Click Submit button!";
+          document.getElementById('check').style.display='block';
+          return false;
+        }
+        else
+          document.getElementById('check').style.display='none';
       }
-  
 
-  //Ajax  
+
+    /* Submit using Ajax */
     $(function() {
     $("#submit").click(function() 
     {
@@ -139,19 +135,18 @@
     var phone = $("#phone").val();
     var dataString = {fname:fname, lname:lname, email:email, phone:phone};
 
-if($("#fname")[0].checkValidity() && $("#lname")[0].checkValidity() && 
+    if($("#fname")[0].checkValidity() && $("#lname")[0].checkValidity() && 
       $("#email")[0].checkValidity() && $("#phone")[0].checkValidity())
     {
       $.ajax({
         type:"POST", url:"/ping.php", data: dataString,
         success: function(data){
-          alert(data);
-          location.href="https://taia.us";
-          }
-          }); 
+              alert(data);
+              location.href="https://taia.us";
+            }
+        }); 
       localStorage.clear();
-      document.getElementById("mypopUp").style.display = "none";
+      wrap.style.display = "none";
     }
-
     });
     });  
