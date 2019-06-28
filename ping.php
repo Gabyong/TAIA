@@ -1,17 +1,21 @@
 <?php
 header("Access-Control-Allow-Origin: *");
-if($_POST['fname'] && $_POST['lname'] && $_POST['email'] && $_POST['phone']){
-	$collect = array($_POST['fname'],$_POST['lname'],$_POST['email'],$_POST['phone'],);
-	$ping = json_encode($collect);
 
-	echo 'Welcome '.$collect[0].'!';
+	$sanitized_fname = htmlspecialchars($_POST['id[0]']);
+	$sanitized_lname = htmlspecialchars($_POST['lname']);
+	$sanitized_email = htmlspecialchars($_POST['email']);
+	$sanitized_phone = htmlspecialchars($_POST['phone']);
+	$collect = array($sanitized_fname, $sanitized_lname, $sanitized_email, $sanitized_phone);
 
-
-	return array('Thank you! Your info has been received.', $ping);	
+	if(!empty($collect))
+	{
+		$ping = json_encode($collect);
+		echo 'Welcome '.$collect[0].'!';
+		return array('Thank you! Your info has been received.', $ping);	
 	} 
-	else {
-	echo "Error: Denied";
-	return "Error: Denied";
+		else 
+	{
+		echo "Error: Denied";
+		return "Error: Denied";
 	}
-
 ?>

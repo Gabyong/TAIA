@@ -39,7 +39,7 @@
     }
 
 /* Cookie */
-    function setCookie(c_name,value,exdays) { 
+    function setCookie(c_name,value,exdays) { a
         var exdate=new Date(); 
         exdate.setDate(exdate.getDate() + exdays); 
         var c_value=escape(value) + ((exdays==null) ? "" : "; expires="+exdate.toUTCString()); 
@@ -133,16 +133,15 @@ const submit = document.querySelector('#submit');
     var lname = $("#lname").val();
     var email = $("#email").val();
     var phone = $("#phone").val();
-    var dataString = {fname:fname, lname:lname, email:email, phone:phone};
+    var dataString = {id[]:fname, id[]:lname, id[]:email, id[]:phone};
 
     if($("#fname")[0].checkValidity() && $("#lname")[0].checkValidity() && 
-      $("#email")[0].checkValidity() && $("#phone")[0].checkValidity())
+       $("#email")[0].checkValidity() && $("#phone")[0].checkValidity())
     {
       $.ajax({
         type:"POST", url:"/ping.php", data: dataString,
         success: function(data){
               alert(data);
-              location.href="https://taia.us";
             }
         }); 
       localStorage.clear();

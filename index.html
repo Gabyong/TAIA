@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset = "utf-8">
-	<title>TAIA Login</title>
+	<title>TAIA</title>
 	<link rel = "icon" href="titleLogo.png" type="image/x-icon">
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
@@ -13,23 +13,23 @@
 <button class="signBox btnPd" id="open"> Click Here to Sign up!</button>
 	<div class="wrap" id="formWrapper"> 
 		<div class="design">
-			<form>
+			<form method="POST">
 				<span class="close" id="close">&times;</span>
 				<h1>Trusted American Insurance Agency</h1>
 
 				<div class="formCSS">
 				<img src="user.png" id="inputImg">
-				<input type="text" name="fname" id="fname" placeholder="Enter the First Name" required pattern ="[a-zA-Z]{1,}"> 
+				<input type="text" name="id[]" id="fname" placeholder="Enter the First Name" required pattern ="[a-zA-Z]{1,}"> 
 				
-				<input type="text" name="lname" id="lname" placeholder="Enter the Last Name" required pattern ="[a-zA-Z]{1,}"> 
+				<input type="text" name="id[]" id="lname" placeholder="Enter the Last Name" required pattern ="[a-zA-Z]{1,}"> 
 				<span class="validity"></span> <br><br>
 
 				<img src="email.png" id="inputImg">
-				<input type="email" name="email" id="email" placeholder="Format : example@taia.us" required pattern ="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"> 
+				<input type="email" name="id[]" id="email" placeholder="Format : example@taia.us" required pattern ="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"> 
 				<span class="validity"></span> <br><br>
 
 				<img src="phone.png" id="inputImg">
-				<input type="tel" name="phone" id="phone" placeholder="Format : 123-456-7890" required pattern ="[0-9]{3}-[0-9]{3}-[0-9]{4}"> 
+				<input type="tel" name="id[]" id="phone" placeholder="Format : 123-456-7890" required pattern ="[0-9]{3}-[0-9]{3}-[0-9]{4}"> 
 				<span class="validity"></span> <br>
 				<button class="buttonAlert btnPd" onclick="return checkAlert()">Check </button>
 				<button type="button" class="submit btnPd" id="submit">Submit</button> <br>
