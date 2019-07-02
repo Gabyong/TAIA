@@ -62,7 +62,9 @@ const submit = document.querySelector('#submit');
             }
         }); 
       localStorage.clear();
-      wrap.style.display = "none";
+      document.getElementById("taia-content").style.display = "none";
+
+      
     }
     });
     });  
