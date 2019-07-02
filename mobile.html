@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TAIA</title>
+	<meta charset = "utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+	<script src="script.js"defer></script>
+	<style>
+
+		#taia-container {
+			width: 940px;
+			margin: 10px;
+			padding: 20px;
+			border: 1px solid #bcbcbc;
+			margin :auto;
+		}
+		#taia-header {
+	   		padding: 20px;
+       		margin-bottom: 20px;
+        	border: 1px solid #bcbcbc;
+        	text-align: center;
+		}
+		#taia-content {
+			width: 300px;
+        	padding: 20px;
+        	margin-bottom: 20px;
+        	border: 1px solid #bcbcbc;
+        	margin : auto;
+		}
+		#taia-form {
+			margin : auto;
+		}
+		input {
+			width: 250px;
+			font-size: 14px;
+    		padding: 10px;
+    		height: 15px;
+    		border: 1px solid #d6d6d6;
+    		border-radius: 10px 10px 10px 10px;
+		   -moz-border-radius: 10px 10px 10px 10px;
+		   -webkit-border-radius: 10px 10px 10px 10px;
+		}
+				button {
+			  width: 135px;
+			  height: 40px;
+			  font-size: 15px;
+			  color: #fff;
+			  background: linear-gradient(#42a1ec,#0070c9);
+			  border: none;
+			  cursor: pointer;
+			  position: relative;
+			  border-radius: 10px 10px 10px 10px;
+			 -moz-border-radius: 10px 10px 10px 10px;
+			 -webkit-border-radius: 10px 10px 10px 10px;
+			  border: 1px solid #07c;
+			  margin-right: 5px;
+		}
+
+			input:invalid+span:after {
+			  position: relative; 
+			  content: '✖';
+			  color: #8b0000;
+			  vertical-align: middle;
+			}
+
+			input:valid+span:after {
+			  position: relative;
+			  content: '✓';
+			  color: #009000;
+			  vertical-align: middle;
+			}
+
+			input + span {
+			  margin-left: 10px;
+			}
+
+
+			@media (max-width:480px) {
+				#taia-container {
+					width: auto;
+				}
+				#taia-content {
+					float: none;
+					width: auto;
+				}
+				#taia-header {
+					width : auto;
+				}
+			}
+	</style>
+</head>
+				<body>
+				<div id="taia-container">
+				<div id="taia-header">
+				<img src="logo.png" width=250px>
+				</div>
+				<div id="taia-content">
+				<form id="taia-form" method="POST">
+				<input type="text" name="fname" id="fname" placeholder="Enter the First Name" required pattern ="[a-zA-Z]{1,}"> 
+				<span class="validity"></span> <br><br>
+				<input type="text" name="lname" id="lname" placeholder="Enter the Last Name" required pattern ="[a-zA-Z]{1,}"> 
+				<span class="validity"></span> <br><br>
+
+				<input type="email" name="email" id="email" placeholder="Format : example@taia.us" required pattern ="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"> 
+				<span class="validity"></span> <br><br>
+
+				<input type="tel" name="phone" id="phone" placeholder="Format : 123-456-7890" required pattern ="[0-9]{3}-[0-9]{3}-[0-9]{4}"> 
+				<span class="validity"></span> <br> <br>
+				<div id="taia-btn">
+				<button class="buttonAlert btnPd" onclick="return checkAlert()">Check </button>
+				<button type="button" class="submit btnPd" id="submit">Submit</button> <br>
+			</div>
+				<div id="check"></div>
+				</form>
+				</div>
+				</div>
+</body>
+
+
+
+
+
+</html>
