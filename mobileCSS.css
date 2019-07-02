@@ -1,0 +1,113 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet);
+
+		body {
+ 			font: 13px/20px "Roboto", Tahoma, Verdana, sans-serif;
+		}
+
+		#taia-container {
+			width: 940px;
+			margin: 10px;
+			padding: 20px;
+			border: 1px solid #bcbcbc;
+			margin :auto;
+		}
+
+		#taia-header {
+	   		padding: 20px;
+       		margin-bottom: 20px;
+        	border: 1px solid #bcbcbc;
+        	text-align: center;
+		}
+
+		#taia-content {
+			width: 300px;
+        	padding: 20px;
+        	margin-bottom: 20px;
+        	border: 1px solid #bcbcbc;
+        	margin : auto;
+		}
+
+		#taia-form {
+			margin : auto;
+		}
+
+		input {
+			width: 220px;
+			font-size: 14px;
+    		padding: 10px;
+    		height: 15px;
+    		border: 1px solid #d6d6d6;
+    		border-radius: 10px 10px 10px 10px;
+		   -moz-border-radius: 10px 10px 10px 10px;
+		   -webkit-border-radius: 10px 10px 10px 10px;
+		}
+
+		button {
+			  width: 115px;
+			  height: 40px;
+			  font-size: 15px;
+			  color: #fff;
+			  background: linear-gradient(#42a1ec,#0070c9);
+			  border: none;
+			  cursor: pointer;
+			  position: relative;
+			  border-radius: 10px 10px 10px 10px;
+			 -moz-border-radius: 10px 10px 10px 10px;
+			 -webkit-border-radius: 10px 10px 10px 10px;
+			  border: 1px solid #07c;
+			  margin-right: 5px;
+		}
+
+		input:invalid+span:after {
+			  position: relative; 
+			  content: '✖';
+			  color: #8b0000;
+			  vertical-align: middle;
+		}
+
+		input:valid+span:after {
+			  position: relative;
+			  content: '✓';
+			  color: #009000;
+			  vertical-align: middle;
+		}
+
+		input + span {
+			  margin-left: 10px;
+		}
+
+		#check{
+			  margin-top:10px;
+			  font-size:15px;
+			  font-weight: bold;
+			  color:  #07c;
+		}
+
+		@media (max-width:480px) {
+			#taia-container {
+				width: auto;
+			}
+			#taia-content {
+				float: none;
+				width: auto;
+			}
+			#taia-header {
+				width : auto;
+			}
+			#taia-form {
+				width : auto;
+			}
+		}
+
+		@media (max-width:350px) {
+			input {
+				width : auto;
+			}
+			button {
+				width : 100px;
+			}
+			div > img {
+				width : 200px;
+			}
+	
+		}
