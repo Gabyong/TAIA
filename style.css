@@ -193,6 +193,8 @@ input + span {
 .signBox {
    width: 200px;
    position: relative;
+   left:53%;
+   bottom:50px;
    color: #000;
    border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
