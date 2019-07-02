@@ -9,8 +9,6 @@ body {
     background-attachment: fixed;
 }
 
-.hc { width:100%; left:0; right:0; margin-left:auto; margin-right:auto; } /* Horizontal Center Align */ 
-
 .wrap {
   -webkit-animation-name: fadeIn; /* Fade in the background */
   -webkit-animation-duration: 0.5s;
@@ -194,9 +192,7 @@ input + span {
 
 .signBox {
    width: 200px;
-   position: absolute;
-   top: 18%;
-   left:170px;
+   position: relative;
    color: #000;
    border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
