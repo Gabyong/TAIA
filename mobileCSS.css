@@ -111,3 +111,10 @@
 			}
 	
 		}
+
+		#taia-alert {
+			  font-size : 15px;
+			  font-weight: bold;
+			  color:  #07c;
+			  text-align: center;
+		}
