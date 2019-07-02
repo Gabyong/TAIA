@@ -63,7 +63,8 @@ const submit = document.querySelector('#submit');
         }); 
       localStorage.clear();
       document.getElementById("taia-content").style.display = "none";
-
+      document.getElementById("taia-alert").innerHTML = "Thank you! Your info has been received.";
+      document.getElementById("taia-alert").style.display='block';
       
     }
     });
