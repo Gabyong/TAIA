@@ -99,7 +99,14 @@
 			}
 		}
 
-		@media (max-width:350px) {
+		#taia-alert {
+			  font-size : 15px;
+			  font-weight: bold;
+			  color:  #07c;
+			  text-align: center;
+		}
+
+		@media (max-width:360px) {
 			input {
 				width : auto;
 			}
@@ -110,11 +117,4 @@
 				width : 200px;
 			}
 	
-		}
-
-		#taia-alert {
-			  font-size : 15px;
-			  font-weight: bold;
-			  color:  #07c;
-			  text-align: center;
 		}
